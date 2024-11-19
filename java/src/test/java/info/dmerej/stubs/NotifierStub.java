@@ -13,11 +13,11 @@ public class NotifierStub implements Notifier{
 
     @Override
     public void notify(User user, String message) {
-        messages.put(user, messages.get(user) + 1);
+        messages.put(user, messages.getOrDefault(user,0) + 1);
     }
 
     public int getMessagesCount(User user) {
-        return this.messages.get(user);
+        return this.messages.getOrDefault(user,0);
     }
 
     public int getMessagesCount() {
